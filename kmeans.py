@@ -28,8 +28,10 @@ def select_centroids(X,k):
     for i in range(k-1):
         print("SELECTING STARTING CENTROIDS ITERATION:", i)
         
-         # Compute distance of each point and
+         # Compute distance of EVERY point to EACH Centroid  
         distances = np.array([[np.linalg.norm(c - x) for c in centroids] for x in X])
+
+        # For each point, select the centroid that is the MINIUM distance 
         min_distances = np.array([np.min(d) for d in distances])
         
         # select the points that maximmize the minimum distance for the rest of the clusters
